@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cat > /usr/share/nginx/html/index.html <<EOF
+<html>
+  <body bgcolor="$COLOR">
+  $BODY
+  <hr/>
+  kopiralyt 2016 hortonvorksz
+  </body>
+</html>
+EOF
+
+nginx -g "daemon off;"

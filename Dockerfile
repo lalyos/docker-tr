@@ -1,7 +1,10 @@
 FROM alpine:3.3
-RUN apk add -U curl nginx
-RUN echo ebed elmult mar > /usr/share/nginx/html/index.html
 
+ENV COLOR=lightblue
+ENV BODY="vege a trainingnek"
+
+RUN apk add -U curl nginx bash
+
+ADD ./start /
 EXPOSE 80 443
-CMD nginx -g "daemon off;"
-
+CMD /start
